@@ -1,12 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFrameworks>net5.0; net6.0</TargetFrameworks>
+    <TargetFrameworks>net5.0; net6.0; net7.0</TargetFrameworks>
     <!--<TargetFrameworks>net5.0;</TargetFrameworks>-->
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blazored.Modal" Version="7.0.0" />
+    <PackageReference Include="Blazored.Modal" Version="7.1.0" />
   </ItemGroup>
 
   
@@ -16,16 +16,21 @@
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('net5')) ">
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.17" />
-    <PackageReference Include="BlazorPro.Spinkit" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.StartsWith('net6')) ">
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.9" />
-    <PackageReference Include="Blazored.Modal" Version="6.0.1" />
-    <PackageReference Include="BlazorPro.Spinkit" Version="1.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.13" />
   </ItemGroup>
 
-  <ItemGroup>
+	<ItemGroup Condition=" $(TargetFramework.StartsWith('net7')) ">
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BlazorPro.Spinkit" Version="1.2.0" />
+	</ItemGroup>
+
+	<ItemGroup>
     <ProjectReference Include="..\..\..\WebRTCme.Middleware\WebRTCme.Middleware.Blazor\WebRTCme.Middleware.Blazor.csproj" />
   </ItemGroup>
 

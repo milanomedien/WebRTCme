@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-ios</TargetFramework>
+    <TargetFrameworks>net6.0-ios; net7.0-ios</TargetFrameworks>
     <!--<Nullable>enable</Nullable>-->
     <ImplicitUsings>true</ImplicitUsings>
     <IsBindingProject>true</IsBindingProject>
+	  <!--<XamarinOutputType>Binding</XamarinOutputType>-->	  
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
@@ -16,10 +17,6 @@
 		<NativeReference Include="WebRTC.framework">
 			<Kind>Framework</Kind>
 		</NativeReference>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\..\..\WebRTCme.Api\WebRTCme.Api.csproj" />
 	</ItemGroup>
 
 </Project>
